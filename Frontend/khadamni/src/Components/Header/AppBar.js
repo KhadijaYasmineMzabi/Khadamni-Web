@@ -12,8 +12,6 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import  SignUp from "../SignUp/Signup";
@@ -23,6 +21,7 @@ import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import VpnKeyRoundedIcon from '@mui/icons-material/VpnKeyRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import  Post from "../PostService/PostService";
+import JobberSignUp from "../JobberSignUp/JobberSignUp";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -105,8 +104,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Home page</MenuItem>
+      <MenuItem onClick={handleMenuClose}> <a href="/">Home</a> </MenuItem>
+      <MenuItem onClick={handleMenuClose}> <a href="/SignIn">Profile</a> </MenuItem>
     </Menu>
   );
 
@@ -164,7 +163,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-      <Router>
+      
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -227,6 +226,8 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              
+              
             >
               <AccountCircle />
             </IconButton>
@@ -239,6 +240,7 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
+              
             >
               <MoreIcon />
             </IconButton>
@@ -248,23 +250,6 @@ export default function PrimarySearchAppBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
-    <div>
-       <Routes>
-           <Route path="/SignUp" element={<SignUp/>}/>
-       </Routes>
-      
-       <Routes>
-             <Route path="/SignIn" element={<SignIn/>}/>
-       </Routes>
-       
-       <Routes>
-         <Route path="/Dashboard" element={<Dashboard/>}/>
-       </Routes>
-       <Routes>
-         <Route path="/Post" element={<Post/>}/>
-       </Routes>
-       
-   </div>
-    </Router>
-  );
+   
+);
 }

@@ -15,6 +15,8 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from "@material-ui/core/styles";
+import { CardActionArea } from '@mui/material';
+
 
 
 function Copyright() {
@@ -96,11 +98,12 @@ const useStyles = makeStyles(theme => ({
 const theme = createTheme();
 
 
-export default function Album() {
+export default function ListOfServices() {
   const classes = useStyles();
   return (
     
     <ThemeProvider theme={theme}>
+        <h1>Choose your category</h1>
       <CssBaseline />
      <main>
         {/* Hero unit */}
@@ -111,29 +114,7 @@ export default function Album() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Find the Jobber that fits all your expectations and criterias.
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              What service do you need ?
-            </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained" href="/JobberSignUp">Become a jobber</Button>
-              <Button variant="outlined"> Ask for a service</Button>
-            </Stack>
-          </Container>
+          
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
@@ -141,11 +122,14 @@ export default function Album() {
            
              {cards.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
+               
+                <Card link="/PostService" className={classes.card}>
+                <CardActionArea>
                   <CardMedia
                     className={classes.cardMedia}
                     image={card.img}
                     title="Image title"
+                    href="/hello"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -153,13 +137,12 @@ export default function Album() {
                     </Typography>
                     <Typography>description</Typography>
                   </CardContent>
+                  </CardActionArea>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button href='/PostService' size="small" color="primary">
                       View
                     </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
+        
                   </CardActions>
                 </Card>
               </Grid>

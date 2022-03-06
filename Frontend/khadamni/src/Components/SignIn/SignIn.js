@@ -1,44 +1,4 @@
-// import React, { Component } from 'react';
-// import {Form, Button, Modal} from 'react-bootstrap';
 
-// export default class SignIn extends Component {
-//   render() {
-//     return <div>
-       
-   
-// <Modal.Dialog>
-//   <Modal.Header >
-//     <Modal.Title>Sign In</Modal.Title>
-//   </Modal.Header>
-
-//   <Modal.Body>
-//   <Form>
-//     <Form.Group className="mb-3" controlId="formBasicEmail">
-//       <Form.Label>Email address</Form.Label>
-//       <Form.Control type="email" placeholder="Enter email" />
-//       <Form.Text className="text-muted">
-//         We'll never share your email with anyone else.
-//       </Form.Text>
-//     </Form.Group>
-   
-   
-  
-//     <Form.Group className="mb-3" controlId="formBasicPassword">
-//       <Form.Label>Password</Form.Label>
-//       <Form.Control type="password" placeholder="Password" />
-//     </Form.Group>
-   
-//     <Button variant="primary" type="submit">
-//       Submit
-//     </Button>
-//   </Form>
-//   </Modal.Body>
-
-  
-// </Modal.Dialog>
-// </div>;
-//   }
-// }
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -53,8 +13,6 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Routes, Route, Router} from "react-router-dom";
-import Dashboard from '../Dashboard/Dashboard'
 import { useState } from 'react'
 
 
