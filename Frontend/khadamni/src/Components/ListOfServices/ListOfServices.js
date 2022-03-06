@@ -140,7 +140,7 @@ export default function ListOfServices() {
                   </CardActionArea>
                   <CardActions>
                     <Button href='/PostService' size="small" color="primary">
-                      View
+                      Select
                     </Button>
         
                   </CardActions>
